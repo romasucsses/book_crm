@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{{ post.book_name }}</title>
+      <link rel="stylesheet" href="{% static 'books/css/slug_book.css' %}" />
+      <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+      <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+  </head>
+  <body>
+    {% include 'books/navigation.html' %}
+  
+    <hr />
+    <div class="product">
+      <img src="{{ post.image.url }}" class="prod-img" />
+
+      <div class="about-book">
+          <h3 class="book-name">Title: {{ post.book_name }}</h3>
+          <h4 class="price">Price: ${{ post.price }}</h4>
+          <p class="pk-book">ID of Book: {{ post.pk }}</p>
+          <p class="description-book">Description: {{ post.description }}</p>
+          <p class="year-publication">Publish on: {{ post.year }}</p>
+          <p class="author-book">Author: {{ post.author }}</p>
+          <p class="quality-book">In Stock: {{ post.in_stock }}</p>
+          <p class="time-added">Added On: {{ post.time_added }}</p>
+          <p class="shelf">On Shelf: {{ post.shelf }}</p>
+          <form action="{% url 'book_slug_post' book_slug=post.slug %}" method="post">
+              {% csrf_token %}
+              <button type='submit' name="action" value="book_delete" class="btn-delete">Delete Book</button>
+              <button class="btn-create"><a href="{% url 'add_order' %}">Create Order</a></button>
+          </form>
+
+      </div>
+
+
+    </div>
+    <hr />
+    <div class="two-block">
+    </div>
+
+  </body>
+</html>

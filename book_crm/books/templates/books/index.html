@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'books/css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'books/css/pagnination_style.css' %}">
+
+        <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+        <title>Book CRM</title>
+    </head>
+    <body>
+        <nav class="navigation">
+            <p class="logo-txt">Book_store</p>
+            <ul class="main-menu">
+                <li class="menu-item {% if current_page == 'all_books' %}active{% endif %}"><a href="{% url 'all_books' %}">Books</a></li>
+                <li class="menu-item {% if current_page == 'add_book' %}active{% endif %}"><a href="{% url 'add_book' %}">Add book</a></li>
+                <li class="menu-item {% if current_page == 'future_books' %}active{% endif %}"><a href="{% url 'future_books' %}">Future</a></li>
+                <li class="menu-item {% if current_page == 'all_clients' %}active{% endif %}"><a href="{% url 'all_clients' %}">Clients</a></li>
+                <li class="menu-item {% if current_page == 'all_orders' %}active{% endif %}"><a href="{% url 'all_orders' %}">Orders</a></li>
+            </ul>
+            <div class="login">
+                <div>
+                    <a href="{% url 'logout' %}" class="log-in">logout</a>
+                    <img src="{% static 'books/images/Add-User.svg' %}" class="login-logo" />
+                </div>
+            </div>
+        </nav>
+
+        <div class="books-list">
+            {% for book in books %}
+                <div class="item">
+                    <img src="{{ book.image.url }}" class="img-item" />
+                    <p class="name">{{ book.book_name }}</p>
+                    <div class="see-price">
+                        <p class="price">${{ book.price }}</p>
+                        <a href="{% url 'book_slug_post' book_slug=book.slug %}" class="btn-see"><button>See</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include 'books/pagnination.html' %}
+    </body>
+
+</html>

@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    background-color: #FFF ;
+    font-family: Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.main {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #f6f6f6;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .order-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    font-size: 27px;
+    color:#666;
+  }
+  
+  .first-column,
+  .second-column {
+    flex: 1;
+  }
+  
+  .first-column p,
+  .second-column p {
+    margin: 5px 0;
+    color: #666;
+
+  }
+  
+.book-info {
+    text-align: center;
+    height: 300px;
+}
+
+.customer-info{
+    height: 300px;
+    font-size: 20px;
+}
+  
+  .book-info img {
+    max-width: 100px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-info p {
+    margin: 5px 0;
+    color: #444;
+  }
+  
+  .book-info button {
+    background-color: #0088ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-info button:hover {
+    background-color: #0055a8;
+  }
+  
+  .customer-info p {
+    margin: 5px 0;
+    color: #666;
+    padding: 15px;
+  }
+  
+  .order-data {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-data > div {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .order-data img {
+    max-width: 100%;
+  }

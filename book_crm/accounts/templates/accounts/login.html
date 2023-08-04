@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/css/login_style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-card">
+        <p class="log-text">Log In</p>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <p class="error">{{ form.non_field_errors }}</p>
+            {% endif %}
+            <input type="text" id="username" name="username" placeholder="User Name">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit" class="btn-submit">login</button>
+
+<!--            <div class="remember-div">-->
+<!--                <input type="checkbox" id="remember" name="remember">-->
+<!--                <p class="remember-text">Remember me</p>-->
+<!--            </div>-->
+        </form>
+        
+        <div class="register-div">
+            <a href="{% url 'singup' %}" class="register">Register now</a>
+            <a href="#" class="help">Need help ?</a>
+        </div>
+    </div>
+    
+</body>
+</html>

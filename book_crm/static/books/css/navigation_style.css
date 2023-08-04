@@ -1,0 +1,30 @@
+.navigation {
+    background-color: #0083E2;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+}
+
+.main-menu a{
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+
+}
+
+.navigation ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.navigation li{
+    width: 95px;
+}
+
+/* Стили для активной вкладки */
+.menu-item.active a {
+    background-color: #0948ad; /* Фоновый цвет активной вкладки */
+    border-radius: 10px; /* Округление углов активной вкладки */
+    padding: 5px 10px; /* Отступы вокруг текста активной вкладки */
+}
+

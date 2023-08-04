@@ -1,0 +1,103 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+  
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.main-block {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.customer-info,
+.book-info,
+.order-info {
+  margin-bottom: 20px;
+}
+
+.customer-info select,
+.book-info input,
+.order-info input,
+.order-info select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.customer-info button,
+.book-info button{
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 4%;
+}
+
+.customer-info button:hover,
+.book-info button:hover,
+.order-info button:hover {
+  background-color: #0056b3;
+}
+
+.order-info .delivery-check,
+.order-info .statuc-select,
+.order-info .data-delevery {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.order-info .statuc-select select,
+.order-info .data-delevery input {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.order-info .statuc-select p,
+.order-info .data-delevery p {
+  margin-right: 10px;
+}
+
+.order-info p {
+  font-weight: bold;
+}
+
+#delivery{
+    margin-left: 10%;
+    width: 20px;
+    height: 20px;
+}
+  
+ 
+.add-order{
+    background-color: red;
+    width: 120px;
+    height: 40px;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-top: 8%;
+}
+  

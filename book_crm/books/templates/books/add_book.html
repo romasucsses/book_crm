@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'books/css/add_book.css' %}" />
+    <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+    <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+    <title>Add_book</title>
+  </head>
+  <body>
+    {% include 'books/navigation.html' %}
+
+    <div class="add-form">
+      <form action="{% url 'add_book' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.book_name.errors }}
+        <!-- остальные поля формы -->
+        <label for="image">
+          <input
+            id="image"
+            type="file"
+            name="image"
+            accept="image/*"
+            style="display: none;"
+          />
+          <img src="{% static 'books/images/Plus.svg' %}" class="add-img" />
+        </label>
+
+        <div class="data">
+
+          <div class="first-colum">
+            <input type="text" id="shelf" name="shelf" placeholder="Shelf" />
+            <input type="text" id="book_name" name="book_name" placeholder="Title" />
+            <input type="text" id="price" name="price" placeholder="Price" />
+          </div>
+
+          <div class="second-colum">
+            <input type="text" id="description" name="description" placeholder="Description" />
+            <input type="text" id="year" name="year" placeholder="Year"/>
+            <input type="text" id="author" name="author" placeholder="Author"/>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-add">add book</button>
+      </form>
+    </div>
+  </body>
+</html>

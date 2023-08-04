@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'books/css/future_style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/pagnination_style.css' %}">
+
+    <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+    <title>Future</title>
+</head>
+<body>
+    {% include 'books/navigation.html' %}
+
+    <form method="get" action="{% url 'future_books' %}" class="search">
+        <img src="{% static 'books/images/Search.svg' %}" alt="retry">
+        <input type="text" name="q" id="searh-input">
+        <button type="submit" name="action" value="search-request" class="btn-search">Search</button>
+        <a href="{% url 'future_books' %}"><button class="reset-search">reset search</button></a>
+    </form>
+
+    <div class="main-block-div">
+        <div class="list-books">
+            <div class="list-text">
+                <p>№</p>
+                <p>Name book</p>
+                <p>Author</p>
+                <p>Date</p>
+            </div>
+
+        {% if books %}
+            {% for book in books %}
+                <div class="list-data">
+                    <div class="numeration">
+                        <img src="{% static 'books/images/Group.svg' %}" alt="retry" class="img-list-data">
+                    </div>
+                    <p>{{ book.title }}</p>
+                    <p>{{ book.author }}</p>
+                    <p>{{ book.time }}</p>
+                    <form method="post" action="{% url 'future_books' %}">
+                        {% csrf_token %}
+                        <button type="submit" name="action" value="del_book" class="btn-dell">Dell Book</button>
+                        <input type="hidden" name="pk" value="{{ book.pk }}">
+                    </form>
+
+                </div>
+            {% endfor %}
+        {% else %}
+            {% for book in future %}
+                <div class="list-data">
+                    <div class="numeration">
+                        <img src="{% static 'books/images/Group.svg' %}" alt="retry" class="img-list-data">
+                    </div>
+                    <p>{{ book.title }}</p>
+                    <p>{{ book.author }}</p>
+                    <p>{{ book.time }}</p>
+                    <form method="post" action="{% url 'future_books' %}">
+                        {% csrf_token %}
+                        <button type="submit" name="action" value="del_book" class="btn-dell">Dell Book</button>
+                        <input type="hidden" name="pk" value="{{ book.pk }}">
+                    </form>
+
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+
+        <div class="add-form">
+            <form method="post" action="{% url 'future_books' %}">
+                {% csrf_token %}
+                <label for="title">Book Name</label>
+                <input type="text" id="title" name="title" />
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" />
+                <button type="submit" name="action" value="add_future_book" class="btn-added">Add for Future</button>
+
+            </form>
+        </div>
+    </div>
+        {% include 'books/pagnination.html' %}
+
+</body>
+</html>

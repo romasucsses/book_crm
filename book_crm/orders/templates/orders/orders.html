@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'orders/css/orders_styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/pagnination_style.css' %}">
+
+    <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+    <title>Orders</title>
+</head>
+<body>
+    {% include 'books/navigation.html' %}
+
+    <form method="get" action="{% url 'all_orders' %}" class="search">
+        <img src="{% static 'orders/images/Search.svg' %}" alt="retry">
+        <input type="number" name="q" id="searh-input">
+        <button type="submit" name="action" value="search-reqest" class="btn-search">Search</button>
+        <a href="{% url 'all_orders' %}"><button class="reset-search">reset search</button></a>
+    </form> 
+
+    <div class="main-block-div">
+        <div class="list-books">
+            <div class="list-text">
+                <p>Order ID</p>
+                <p>Status</p>
+                <p>Number Phone</p>
+                <p>Sum</p>
+                <p>Data</p>
+            </div>
+        {% if orders %}
+            {% for each in orders %}
+                <div class="list-data">
+                <img src="{% static 'orders/images/Group.svg' %}" alt="retry" class="img-list-data">
+                    <div class="data">
+                        <p class="order-id">{{ each.pk }}</p>
+                        <p>{{ each.status }}</p>
+                        <p>{{ each.customer_information.phone }}</p>
+                        <p>100$</p>
+                        <p>{{ each.date_for_delivery }}</p>
+                        <a href="{% url 'order_post' pk_order=each.pk %}"><button class="btn-see">See</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            {% for order in all_orders %}
+            <div class="list-data">
+                <img src="{% static 'orders/images/Group.svg' %}" alt="retry" class="img-list-data">
+                <div class="data">
+                    <p class="order-id">{{ order.pk }}</p>
+                    <p>{{ order.status }}</p>
+                    <p>{{ order.customer_information.phone }}</p>
+                    <p>100$</p>
+                    <p>{{ order.date_for_delivery }}</p>
+                    <a href="{% url 'order_post' pk_order=order.pk %}"><button class="btn-see">See</button></a>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+            
+            
+        </div>
+        <a href="{% url 'add_order' %}" class="add-cl-a"><button class="add-ord-btn">Create Order</button></a>
+    </div>
+    {% include 'books/pagnination.html' %}
+</body>
+</html>

@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    background-color: #FFF ;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* Стили для контейнера формы */
+form {
+    max-width: 500px;
+    margin: 55px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Стили для полей ввода */
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  /* Стили для кнопки */
+  button.add-cl-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Стили для кнопки при наведении */
+  button.add-cl-btn:hover {
+    background-color: #0056b3;
+  }
+  

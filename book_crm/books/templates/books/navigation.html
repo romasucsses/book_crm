@@ -1,0 +1,12 @@
+<nav class="navigation">
+    <ul class="main-menu">
+        <li class="menu-item {% if current_page == 'all_books' %}active{% endif %}"><a href="{% url 'all_books' %}">Books</a></li>
+        <li class="menu-item {% if current_page == 'add_book' %}active{% endif %}"><a href="{% url 'add_book' %}">Add book</a></li>
+        <li class="menu-item {% if current_page == 'future_books' %}active{% endif %}"><a href="{% url 'future_books' %}">Future</a></li>
+        <li class="menu-item {% if current_page == 'all_clients' %}active{% endif %}"><a href="{% url 'all_clients' %}">Clients</a></li>
+        <li class="menu-item {% if current_page == 'all_orders' or current_page == 'order_post' %}active{% endif %}">
+            <a href="{% url 'all_orders' %}">Orders</a>
+        </li>
+    </ul>
+</nav>
+

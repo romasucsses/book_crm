@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+.navigation {
+    background-color: #0083E2;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+}
+
+.main-menu a{
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+
+}
+
+.navigation ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.navigation li{
+    width: 95px;
+}
+
+.logo-txt{
+    color: #FFF;
+    margin-left:30px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.login{
+    margin-right: 80px;
+    margin-top: 10px;
+}
+
+.login img{
+    width: 30px;
+    height: auto;
+}
+
+.log-in{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* div books-list */
+
+.books-list{
+    background-image: url(../images/background-home.png);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.item{
+
+    width: 220px;
+    height: 320px;
+    border: 0.5px solid #1F1F1F;
+    border-radius: 0;
+    margin: 10px;
+    margin-top: 40px;
+}
+
+.item img{
+    width: 160px;
+    height: 215px;
+    margin-left:30px;
+    margin-top: 10px;
+}
+
+.see-price{
+    display: flex;
+}
+
+.see-price p {
+    border-radius: 10px;
+    width: 60px;
+    background-color: #D9D9D9;;
+    padding: 10px;
+    color: #06BB02;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.see-price button{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #0083E2;
+    color: #FFF;
+    border: 0;
+}
+
+.name {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-left: 9px;
+    margin-top: -5px;
+}
+
+/* Стили для активной вкладки */
+.menu-item.active a {
+    background-color: #0948ad; /* Фоновый цвет активной вкладки */
+    border-radius: 10px; /* Округление углов активной вкладки */
+    padding: 5px 10px; /* Отступы вокруг текста активной вкладки */
+}
+
+  

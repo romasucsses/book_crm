@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'clients/css/clients_style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+    <link rel="stylesheet" href="{% static 'books/css/pagnination_style.css' %}">
+
+    <link rel="icon" href="{% static 'books/images/logo.jpg' %}" >
+    <title>Clients</title>
+</head>
+<body>
+    {% include 'books/navigation.html' %}
+    <div class="search">
+        <div class="add-cl">
+            <p class="total-clients">Total Clients: {{ all_clients_numb }}</p>
+            <a href="{% url 'add_client' %}" ><button class="add-cl-btn">Add Client</button></a>
+        </div>
+        <form method="get" action="{% url 'all_clients' %}">
+            <div class="srch">
+                <img src="{% static 'clients/images/Search.svg' %}" alt="retry">
+                <input type="text" name="q" id="searh-input">
+                <button type="submit" name="action" value="search-reqest" class="btn-search">Search</button>
+                <button class="reset-search"><a href="{% url 'all_clients' %}">reset search</a></button>
+            </div>
+        </form>
+    </div>
+
+    <div class="main-block-div">
+            {% if clients %}
+                {% for each in clients %}
+                    <div class="data">
+                        <span>{{ each.pk }}</span>
+                        <p>First Name: {{ each.first_name }}</p>
+                        <p>Last Name: {{ each.last_name }}</p>
+                        <p>Phone: {{ each.phone }}</p>
+                        <p>Adress: {{ each.address }}</p>
+                        <p>Time Join: {{ each.time_joining }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for each in all_clients %}
+                    <div class="data">
+                        <span>{{ each.pk }}</span>
+                        <p>First Name: {{ each.first_name }}</p>
+                        <p>Last Name: {{ each.last_name }}</p>
+                        <p>Phone: {{ each.phone }}</p>
+                        <p>Adress: {{ each.address }}</p>
+                        <p>Time Join: {{ each.time_joining }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% include 'books/pagnination.html' %}
+</body>
+</html>

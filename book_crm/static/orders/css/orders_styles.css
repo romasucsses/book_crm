@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    background-color: #FFF ;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.search{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.search img{
+    width: 20px;
+    height: auto;
+}
+
+.search input{
+    width: 280px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+.search button{
+    width: 100px;
+    height: 25px;
+    background-color: #0083E2;
+    color: #FFF;
+    border: 0;
+    border-radius: 10px;
+}
+
+.main-block-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top:50px;
+}
+
+.list-text{
+    display: flex;
+    justify-content: space-between;
+    width: 490px;
+    color: #585858;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 80px;
+}
+
+.list-data{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.list-books{
+    width: 780px;
+    border-radius: 10px;
+    border-color: black;
+    border: 10px;
+}
+
+
+
+.list-data img{
+    width: 20px;
+    margin-left: 50px;
+}
+
+.list-data button{
+    width: 100px;
+    height: 30px;
+    background-color: #0083E2;
+    color: #FFF;
+    border: none;
+    margin-top: 10px;
+}
+
+
+.data{
+    display: flex;
+    justify-content: space-between;
+    width: 720px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.add-ord-btn{
+    height: 40px;
+    width: 120px;
+    color:#FFF;
+    background-color: red;
+    border:none;
+    border-radius: 7px;
+    margin-right: 40px;
+}
+

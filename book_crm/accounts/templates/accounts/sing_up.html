@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/css/sing_up_style.css' %}">
+    <title>Sing Up</title>
+</head>
+<body>
+    <div class="singup-card">
+        <p class="singup-text">Create Account</p>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <input type="text" id="id_username" name="username" placeholder="User Name"/>
+            {% if form.errors.username %}
+                <p class="error">{{ form.errors.username }}</p>
+            {% endif %}
+            <input type="password" id="id_password1" name="password1" placeholder="Password"/>
+            {% if form.errors.password1 %}
+                <p class="error">{{ form.errors.password1 }}</p>
+            {% endif %}
+            <input type="password" id="id_password2" name="password2" placeholder="Confirm Password"/>
+            {% if form.errors.password2 %}
+                <p class="error">{{ form.errors.password2 }}</p>
+            {% endif %}
+            <button type="submit" class="btn-submit">Create</button>
+
+        </form>
+        
+        <div class="register-div">
+            <a href="{% url 'login' %}" class="login">login</a>
+            <a href="#" class="help">Need help ?</a>
+        </div>
+    </div>
+    
+</body>
+</html>

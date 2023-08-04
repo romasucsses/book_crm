@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'orders/css/order_post.css' %}" >
+     <link rel="stylesheet" href="{% static 'books/css/navigation_style.css' %}">
+    <link rel="icon" href="{% static 'books/images/logo.jpg' %}" />
+    <title>Order: №{{ orders.pk }}</title>
+  </head>
+  <body>
+    {% include 'books/navigation.html' %}
+
+    <div class='main'>
+      <div class="order-info">
+        <div class="first-colum">
+          <p>ID: {{ orders.pk }}</p>
+          <p>Status: {{ orders.status }}</p>
+          <p>Deliery: {{ orders.delivery }}</p>
+        </div>
+        <div class="second-colum">
+          <p>Created on : {{ orders.created_at }}</p>
+          <p>Delivery on: {{ orders.date_for_delivery }}</p>
+        </div>
+      </div>
+      <div class="order-data">
+        <div class="book-info">
+          <img src="{{ books.image.url }}">
+          <p>{{ books.book_name }}</p>
+          <p>Price: ${{ books.price }}</p>
+          <button><a href="{% url 'book_slug_post' book_slug=books.slug %}">View Book</a></button>
+        </div>
+        <div class="customer-info">
+          <p>First Name: {{ customers.first_name }}</p>
+          <p>Last Name: {{ customers.last_name }}</p>
+          <p>Phone: {{ customers.phone }}</p>
+          <p>Address: {{ customers.address }}</p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
