@@ -27,11 +27,13 @@
           <p class="quality-book">In Stock: {{ post.in_stock }}</p>
           <p class="time-added">Added On: {{ post.time_added }}</p>
           <p class="shelf">On Shelf: {{ post.shelf }}</p>
-          <form action="{% url 'book_slug_post' book_slug=post.slug %}" method="post">
-              {% csrf_token %}
-              <button type='submit' name="action" value="book_delete" class="btn-delete">Delete Book</button>
+          <div class="manage-btns">
+              <form action="{% url 'book_slug_post' book_slug=post.slug %}" method="post">
+                  {% csrf_token %}
+                  <button type='submit' name="action" value="book_delete" class="btn-delete">Delete Book</button>
+              </form>
               <button class="btn-create"><a href="{% url 'add_order' %}">Create Order</a></button>
-          </form>
+          </div>
 
       </div>
 

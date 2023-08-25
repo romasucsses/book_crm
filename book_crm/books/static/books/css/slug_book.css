@@ -98,7 +98,11 @@ button a{
     margin-bottom: 5px;
 }
   
-  
+/* manage-btns div*/
+.manage-btns{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 /* Two Blok Div */
